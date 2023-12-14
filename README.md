@@ -26,18 +26,19 @@ O projeto api-cliente é uma aplicação Front-end e Back-end desenvolvida em Ja
 
 ## Telas
   - Busca de clientes
-  ![Screenshot from 2023-12-14 02-14-09](https://github.com/manoelerickgp/api-client/assets/139079937/b0c40f60-be73-4b46-88b3-7206b29cfac0)
+    ![Screenshot from 2023-12-14 02-14-09](https://github.com/manoelerickgp/api-client/assets/139079937/b0c40f60-be73-4b46-88b3-7206b29cfac0)
 
   - Clientes encontrados
-  ![Screenshot from 2023-12-14 02-15-43](https://github.com/manoelerickgp/api-client/assets/139079937/6ddc338c-fd7e-4425-88c8-caada7b8e184)
+    ![Screenshot from 2023-12-14 02-15-43](https://github.com/manoelerickgp/api-client/assets/139079937/6ddc338c-fd7e-4425-88c8-caada7b8e184)
 
   - Botao: Detalhes -> Irá exibir os detalhes do cliente
-  ![Screenshot from 2023-12-14 02-16-15](https://github.com/manoelerickgp/api-client/assets/139079937/73cb0541-17cf-4be2-a1d4-5bfd3018cd3a)
+    ![Screenshot from 2023-12-14 02-16-15](https://github.com/manoelerickgp/api-client/assets/139079937/73cb0541-17cf-4be2-a1d4-5bfd3018cd3a)
 
   - Botao: Voltar -> Irá minimizar os detalhes do cliente.
     ![Screenshot from 2023-12-14 02-51-54](https://github.com/manoelerickgp/api-client/assets/139079937/b9235af7-d322-4a16-8f70-eb63c0f7847e)
 
   - Botao: Excluir -> Removerá o cliente da listagem, sem que seja apagado do banco de dados(sem chamar API).
+    ![Screenshot from 2023-12-14 02-53-23](https://github.com/manoelerickgp/api-client/assets/139079937/dde9d04c-f830-45c6-9f9b-a55663afd843)
 
   - Botao: Visualizar PDF -> Irá direcionar o usuário para uma nova aba, onde será apresentado o PDF da fatura.
 
