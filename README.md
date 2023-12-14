@@ -34,6 +34,8 @@ O projeto api-cliente é uma aplicação Front-end e Back-end desenvolvida em Ja
   - Botao: Detalhes -> Irá exibir os detalhes do cliente
   ![Screenshot from 2023-12-14 02-16-15](https://github.com/manoelerickgp/api-client/assets/139079937/73cb0541-17cf-4be2-a1d4-5bfd3018cd3a)
 
+  - Botao: Voltar -> Irá minimizar os detalhes do cliente.
+
   - Botao: Excluir -> Removerá o cliente da listagem, sem que seja apagado do banco de dados(sem chamar API).
 
   - Botao: Visualizar PDF -> Irá direcionar o usuário para uma nova aba, onde será apresentado o PDF da fatura.
