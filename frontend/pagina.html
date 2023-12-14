@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Busca de Clientes</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <h1>Busca de Clientes</h1>
+    <label for="data-inicio">Data de Nascimento Inicial:</label>
+    <input type="date" id="data-inicio">
+    <label for="data-fim">Data de Nascimento Final:</label>
+    <input type="date" id="data-fim">
+    <button onclick="buscarClientes()">Pesquisar</button>
+  
+    <br>
+    <h3>Clientes Encontrados</h3>
+    <ul id="lista-clientes"></ul>
+      
+    <script>
+      async function buscarClientes() {
+        const dataInicial = document.getElementById("data-inicio").value;
+        const dataFinal = document.getElementById("data-fim").value;
+        console.log(dataInicial)
+        console.log(dataFinal)
+        try {
+          const response = await fetch(`http://localhost:8080/api/v1/persons/findByPeriod?birthdayStart=${dataInicial}&birthdayEnd=${dataFinal}`);
+          const clientes = await response.json();
+          console.log(clientes)
+
+          const listaClientes = document.getElementById("lista-clientes");
+          listaClientes.innerHTML = "";
+
+          clientes.forEach(cliente => {
+            const itemLista = document.createElement("li");
+            itemLista.innerHTML = `<strong>${cliente.firstname} ${cliente.lastname}</strong> - ${cliente.birthday}  <br> `;
+            listaClientes.appendChild(itemLista);
+
+            const detalhesDiv = document.createElement("div");
+            detalhesDiv.className = "cliente-info";
+            detalhesDiv.style.display = "none"; 
+            detalhesDiv.innerHTML = `
+              <h2>Detalhes do Cliente</h2>
+              <p>ID: ${cliente.id}</p>
+              <p>Email: ${cliente.email}</p>
+              <p>Data de Nascimento: ${cliente.birthday}</p>
+              <p>Telefone: ${cliente.phone}</p>
+              <p>
+                <strong>Endereço:</strong><br>
+                Rua: ${cliente.address.street}, ${cliente.address.streetName}<br>
+                Número: ${cliente.address.buildingNumber}<br>
+                Cidade: ${cliente.address.city}<br>
+                CEP: ${cliente.address.zipcode}<br>
+                País: ${cliente.address.country}<br>
+                Código do País: ${cliente.address.countryCode}<br>
+                Latitude: ${cliente.address.latitude}<br>
+                Longitude: ${cliente.address.longitude}
+              </p>
+              <p>Credit Cards:</p>
+              <ul>
+                ${cliente.creditCards.map(cc => `
+                  <li>
+                    <strong>ID:</strong> ${cc.id}<br>
+                    <strong>Type:</strong> ${cc.type}<br>
+                    <strong>Number:</strong> ${cc.number}<br>
+                    <strong>Expiration:</strong> ${cc.expiration}
+                  </li>
+                `).join("")}
+              </ul>
+            `;
+            itemLista.appendChild(detalhesDiv);
+
+            // Criação do botão Detalhes
+            const botaoDetalhes = document.createElement("button");
+            botaoDetalhes.className = "button-details";
+            botaoDetalhes.innerHTML = "Detalhes";
+
+            // Variável de controle para saber se os detalhes estão visíveis
+            let detalhesVisiveis = false; 
+
+            // Adiciona o manipulador de eventos ao botão Detalhes
+            botaoDetalhes.onclick = () => {
+                if (detalhesVisiveis) {
+                    // Se os detalhes estão visíveis, oculta-os
+                    toggleDetalhes(detalhesDiv);
+                    botaoDetalhes.innerHTML = "Detalhes";
+                } else {
+                    // Se os detalhes não estão visíveis, mostra-os
+                    toggleDetalhes(detalhesDiv);
+                    botaoDetalhes.innerHTML = "Voltar";
+                }
+
+                detalhesVisiveis = !detalhesVisiveis; // Inverte o estado
+            };
+
+            // Adiciona o botão Detalhes ao elemento itemLista
+            itemLista.appendChild(botaoDetalhes);
+
+            // Criação do botão Excluir
+            const botaoExcluir = document.createElement("button");
+            botaoExcluir.className = "button-delete";
+            botaoExcluir.innerHTML = "Excluir";
+
+            // Adiciona o manipulador de eventos ao botão Excluir
+            botaoExcluir.onclick = () => itemLista.remove();
+
+            // Adiciona o botão Excluir ao elemento itemLista
+            itemLista.appendChild(botaoExcluir);
+          
+            const botaoPdf = document.createElement("button");
+            botaoPdf.className = "button-pdf";
+            botaoPdf.innerHTML = "Visualizar PDF";
+            botaoPdf.onclick = () => {
+              const url = "https://static.snxpay.com/pdf/Fatura%20Elevaty.pdf";
+              window.open(url, "_blank");
+            };
+
+            itemLista.appendChild(botaoPdf);
+          });
+        } catch (error) {
+          console.error('Erro na requisição:', error);
+        }
+      }
+
+      function toggleDetalhes(detalhesDiv) {
+        detalhesDiv.style.display = detalhesDiv.style.display === "none" ? "block" : "none";
+      }
+    </script>
+  </body>
+</html>
