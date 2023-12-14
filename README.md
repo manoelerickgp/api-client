@@ -35,6 +35,7 @@ O projeto api-cliente é uma aplicação Front-end e Back-end desenvolvida em Ja
   ![Screenshot from 2023-12-14 02-16-15](https://github.com/manoelerickgp/api-client/assets/139079937/73cb0541-17cf-4be2-a1d4-5bfd3018cd3a)
 
   - Botao: Voltar -> Irá minimizar os detalhes do cliente.
+    ![Screenshot from 2023-12-14 02-51-54](https://github.com/manoelerickgp/api-client/assets/139079937/b9235af7-d322-4a16-8f70-eb63c0f7847e)
 
   - Botao: Excluir -> Removerá o cliente da listagem, sem que seja apagado do banco de dados(sem chamar API).
 
