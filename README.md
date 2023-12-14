@@ -19,3 +19,48 @@ O projeto api-cliente é uma aplicação Front-end e Back-end desenvolvida em Ja
 - *Lombok:* A seleção do Lombok para este projeto foi motivada pela sua capacidade de automatizar a geração de métodos comuns em classes Java. Esta biblioteca contribui para um código mais enxuto e legível, reduzindo a necessidade de codificação padrão, como getters, setters e métodos construtores, melhorando assim a eficiência do desenvolvimento.
 - *H2 Database:* A decisão de utilizar o H2 Database, um sistema de gerenciamento de banco de dados em memória, foi fundamentada na sua eficácia durante as fases de desenvolvimento e teste. Esta escolha foi atribuída devido à sua simplicidade de integração, que facilita a realização de testes rápidos e o desenvolvimento ágil.
 - *Maven:* O maven foi adotada no projeto para desenpenhar um papel crucial na criação e no gerenciamento eficiente das dependências.
+
+- *ModelMapper:* Introduzido o uso do ModelMapper para simplificar a conversão entre entidades JPA e objetos DTO (Data Transfer Object). O ModelMapper automatiza o mapeamento de campos entre esses dois tipos de objetos, reduzindo a necessidade de código manual e melhorando a manutenibilidade.
+
+- *DTOs (Data Transfer Objects):* Adicionada a utilização de DTOs para transferência de dados entre a camada de controle e a camada de visualização. Isso permite uma maior flexibilidade no design da API, evitando a exposição desnecessária de detalhes internos das entidades JPA.
+
+## Telas
+  - Busca de clientes
+  ![Screenshot from 2023-12-14 02-14-09](https://github.com/manoelerickgp/api-client/assets/139079937/b0c40f60-be73-4b46-88b3-7206b29cfac0)
+
+  - Clientes encontrados
+  ![Screenshot from 2023-12-14 02-15-43](https://github.com/manoelerickgp/api-client/assets/139079937/6ddc338c-fd7e-4425-88c8-caada7b8e184)
+
+  - Botao: Detalhes -> Irá exibir os detalhes do cliente
+  ![Screenshot from 2023-12-14 02-16-15](https://github.com/manoelerickgp/api-client/assets/139079937/73cb0541-17cf-4be2-a1d4-5bfd3018cd3a)
+
+  - Botao: Excluir -> Removerá o cliente da listagem, sem que seja apagado do banco de dados(sem chamar API).
+
+  - Botao: Visualizar PDF -> Irá direcionar o usuário para uma nova aba, onde será apresentado o PDF da fatura.
+
+## GET Clientes por data de nascimento
+  - URL -> http://localhost:8080/api/v1/persons/findByPeriod?birthdayStart=1996-02-24&birthdayEnd=2010-02-09
+
+## GET Todos os clientes
+  - URL -> http://localhost:8080/api/v1/persons
+
+## GET Cliente por ID
+  - URL -> http://localhost:8080/api/v1/persons
+    ![Screenshot from 2023-12-14 02-36-56](https://github.com/manoelerickgp/api-client/assets/139079937/c5c731a9-2504-429a-8242-b7342637d5f9)
+
+
+## GET Todos cartoes de credito
+  - URL -> http://localhost:8080/api/v1/credit_cards
+
+## GET Cartao por ID
+  - URL -> http://localhost:8080/api/v1/credit_cards/3
+    ![Screenshot from 2023-12-14 02-40-30](https://github.com/manoelerickgp/api-client/assets/139079937/7e4cbf61-fac6-473a-a586-216be5a230b0)
+
+
+## GET Todos enderecos
+  - URL -> http://localhost:8080/api/v1/addresses
+
+## GET Endereco por ID
+  - URL -> http://localhost:8080/api/v1/addresses/3
+    ![Screenshot from 2023-12-14 02-45-07](https://github.com/manoelerickgp/api-client/assets/139079937/0bd7985f-f48e-477e-b461-a33e0d0498ed)
+
