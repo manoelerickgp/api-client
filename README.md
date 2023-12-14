@@ -50,7 +50,7 @@ O projeto api-cliente é uma aplicação Front-end e Back-end desenvolvida em Ja
 
 ## GET Cliente por ID
   - URL -> http://localhost:8080/api/v1/persons
-    ![Screenshot from 2023-12-14 02-36-56](https://github.com/manoelerickgp/api-client/assets/139079937/c5c731a9-2504-429a-8242-b7342637d5f9)
+![Screenshot from 2023-12-14 02-36-56](https://github.com/manoelerickgp/api-client/assets/139079937/c5c731a9-2504-429a-8242-b7342637d5f9)
 
 
 ## GET Todos cartoes de credito
@@ -58,7 +58,7 @@ O projeto api-cliente é uma aplicação Front-end e Back-end desenvolvida em Ja
 
 ## GET Cartao por ID
   - URL -> http://localhost:8080/api/v1/credit_cards/3
-    ![Screenshot from 2023-12-14 02-40-30](https://github.com/manoelerickgp/api-client/assets/139079937/7e4cbf61-fac6-473a-a586-216be5a230b0)
+![Screenshot from 2023-12-14 02-40-30](https://github.com/manoelerickgp/api-client/assets/139079937/7e4cbf61-fac6-473a-a586-216be5a230b0)
 
 
 ## GET Todos enderecos
@@ -66,5 +66,5 @@ O projeto api-cliente é uma aplicação Front-end e Back-end desenvolvida em Ja
 
 ## GET Endereco por ID
   - URL -> http://localhost:8080/api/v1/addresses/3
-    ![Screenshot from 2023-12-14 02-45-07](https://github.com/manoelerickgp/api-client/assets/139079937/0bd7985f-f48e-477e-b461-a33e0d0498ed)
+![Screenshot from 2023-12-14 02-45-07](https://github.com/manoelerickgp/api-client/assets/139079937/0bd7985f-f48e-477e-b461-a33e0d0498ed)
 
