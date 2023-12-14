@@ -1,5 +1,6 @@
 package com.project.clientapi.services;
 
+import com.project.clientapi.dtos.PersonDTO;
 import com.project.clientapi.models.Person;
 
 import java.time.LocalDate;
@@ -7,9 +8,9 @@ import java.util.List;
 
 public interface PersonService {
 
-    List<Person> getPersonsByBirthdayRange(LocalDate startDate, LocalDate endDate);
+    List<PersonDTO> getPersonsByBirthdayRange(LocalDate startDate, LocalDate endDate);
 
-    List<Person> findAllPersons();
+    List<PersonDTO> findAllPersons();
 
-    Person findPersonById(Long id);
+    PersonDTO findPersonById(Long id);
 }

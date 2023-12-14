@@ -1,5 +1,6 @@
 package com.project.clientapi.dtos;
 
+import com.project.clientapi.models.CreditCard;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 @Data
-@AllArgsConstructor
+
 @NoArgsConstructor
 public class CreditCardDTO implements Serializable {
 
@@ -18,4 +19,11 @@ public class CreditCardDTO implements Serializable {
 
     private Long personId;
 
+    public CreditCardDTO(CreditCard creditCard) {
+        this.id = creditCard.getId();
+        this.type = creditCard.getType();
+        this.number = creditCard.getNumber();
+        this.expiration = creditCard.getExpiration();
+        this.personId = creditCard.getPerson().getId();
+    }
 }

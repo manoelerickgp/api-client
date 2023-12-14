@@ -1,5 +1,6 @@
 package com.project.clientapi.dtos;
 
+import com.project.clientapi.models.Address;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

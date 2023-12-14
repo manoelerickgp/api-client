@@ -19,7 +19,6 @@ public class CreditCardController {
     @Autowired
     private CreditCardServiceImpl creditCardService;
 
-
     @GetMapping
     public ResponseEntity<List<CreditCardDTO>> findAllCreditCards(){
         return new ResponseEntity<>(creditCardService.getAllCreditCardsWithOwnerIds(), HttpStatus.OK);
@@ -27,8 +26,7 @@ public class CreditCardController {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<CreditCardDTO> findCreditCardById(@PathVariable Long id) {
-        var creditCard = creditCardService.findCreditCardById(id);
-        return new ResponseEntity<>(creditCard, HttpStatus.OK);
+        return new ResponseEntity<>(creditCardService.findCreditCardById(id), HttpStatus.OK);
     }
 }
 
